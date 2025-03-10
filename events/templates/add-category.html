@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Category</title>
+</head>
+<body>
+    <div>
+        {% if message %}
+            <p>{{message}}</p>
+        {% endif %}
+    </div>
+    <h2>Create Category</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Create Category</button>
+    </form>
+    <button>
+        <a href="{% url 'dashboard' %}" >
+            Back to Dashboard
+        </a>
+    </button>
+</body>
+</html>
