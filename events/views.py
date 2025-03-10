@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from events.forms import EventModelForm, CategoryModelForm, ParticipantModelForm
 from events.models import Event, Category, Participant
 from django.contrib import messages
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -72,3 +73,6 @@ def participant_list(request):
 def event_list(request):
     events = Event.objects.all()
     return render(request, 'event_list.html', {'events': events})
+
+def home(request):
+    return render(request, 'home.html', {'message': "Welcome to the Event Management System"})
